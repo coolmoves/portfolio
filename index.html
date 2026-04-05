@@ -1,0 +1,332 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+      @keyframes headeranim{
+        0%{
+          backdrop-filter:blur(0px);
+        }
+        50%{
+          backdrop-filter:blur(1px);
+        }
+        100%{
+          backdrop-filter:blur(0px);
+        }
+      }
+      header{
+        overflow: hidden;
+        background-position: center;
+        margin:0px;
+        box-sizing:border-box;
+        height:100vh;
+        padding:10rem 10%;
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        opacity: 1;
+        background-image: radial-gradient(rgba(0,0,0,0),rgba(19, 19, 19, 1)),radial-gradient(#ffb300 0.75px, rgba(19, 19, 19, 1) 0.75px);
+        background-size: auto,15px 15px;
+      }
+
+      /* extras */
+      main{
+        margin:0px;
+        box-sizing:border-box;
+        flex:1;
+      }
+      header h2,h1{
+        margin:0px;
+      }
+      header h1{
+        font-size: clamp(1rem, 4vw, 4rem);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: #DDDDDD;
+        margin-bottom: 2rem;
+        text-shadow:0 0 12px rgba(255, 179, 0, 0.4);
+      }
+      header h1 span{
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: #ffb300;
+        margin-bottom: 2rem;
+        text-shadow:0 0 12px rgba(255, 179, 0, 0.4);
+      }
+      header div,header section{
+        display: inline-block;
+        transform: translateY(10%);
+        opacity:0;
+        animation: reveal 0.8s ease forwards;
+      }
+      header h2{
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-weight:normal;
+        color:#777777;
+      }
+      header ul{
+        overflow-wrap:anywhere;
+        text-wrap-mode:wrap;
+      }
+      header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.1);
+        animation:headeranim 4s ease-in-out infinite;
+        transition: 0.4s ease;
+      }
+      header button{
+        border:1px solid #ffb300;
+        background:transparent;
+        color:#ffb300;
+        padding:5px 10px;
+      }
+      header button:hover{
+        background:#ffb300;
+        color:#000000;
+      }
+      #slideshow{
+        flex:1;
+        display:flex;
+        flex-direction:column;
+      }
+      #slideshow article{
+        flex:1;
+        display:grid;
+      }
+
+      #slideshow div{
+        display:none;
+      }
+
+      #slideshow:has(#slde1:checked) label[for="slde1"],
+      #slideshow:has(#slde2:checked) label[for="slde2"],
+      #slideshow:has(#slde3:checked) label[for="slde3"] {
+        display: inline-block;
+        transform: scale(1.1);
+        color: #ffb300;
+      }
+      #slideshow:has(#slde1:checked) article div:nth-child(1) {
+        display: block;
+      }
+      #slideshow:has(#slde2:checked) article div:nth-child(2) {
+        display: block;
+      }
+      #slideshow:has(#slde3:checked) article div:nth-child(3) {
+        display: block;
+      }
+      #slideshow label{
+        color:#9e8e78;
+      }
+      @media only screen and (max-width:746px){
+        nav{
+          flex-direction:column;
+          flex-direction:column;
+          padding-left:5%;
+          padding-right:5%;
+        }
+        header{
+          padding:10rem 5%;
+        }
+        footer{
+          padding:6rem 5%;
+        }
+        main>section{
+          padding:0px 5%;
+          padding-top:59.2px;
+        }
+      }
+      main{
+        display:flex;
+        flex-direction:column;
+      }
+      main>section{
+        box-sizing:border-box;
+        min-height:100vh;
+        padding:0px 10%;
+        padding-top:102px;
+      }
+      #recent section{
+        padding:3rem 0px;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        grid-gap:15px;
+      }
+      #recent div{
+        background:#1c1b1b;
+        padding:32px;
+        border:1px solid #000;
+        transition:border 0.5s;
+      }
+      #recent a{
+        color:#ffb300;
+        text-decoration: none;
+      }
+      #recent a:hover{
+        color:#ffdd11;
+      }
+      #recent div:hover{
+        border:1px solid #ffb300;
+      }
+      #recent button{
+        margin:auto;
+        display:block;
+        width:fit-content;
+        border:1px solid #ffb300;
+        background:transparent;
+        color:#ffb300;
+        padding:5px 10px;
+      }
+      #recent button:hover{
+        background:#ffb300;
+        color:#000000;
+      }
+      #contact{
+        
+      }
+      #contact form{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+      }
+      #contact form input,#contact form textarea{
+        padding:10px;
+        background:#111;
+        border:1px solid #333;
+        color:#DDDDDD;
+      }
+      #contact a{
+        text-decoration:none;
+        color:#999999;
+      }
+      #contact input[type="submit"]{
+        border:1px solid #ffb300;
+        background:transparent;
+        color:#ffb300;
+        padding:5px 10px;
+      }
+      #contact input[type="submit"]:hover{
+        background:#ffb300;
+        color:#000000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <span>GK</span>
+      <ul>
+        <li><a class="active" href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+      <a href="resume.pdf" target="_blank"><button>RESUME</button></a>
+    </nav>
+    <main>
+      <header>
+        <div>
+          <h1><span>GOUTHAM</span> <br>KARIYADAN</h1>
+          <h2>Full-Stack Developer | CS Undergraduate</h2>
+        </div>
+        <section id="slideshow">
+          <input type="radio" id="slde1" name="slde" hidden checked>
+          <input type="radio" id="slde2" name="slde" hidden>
+          <input type="radio" id="slde3" name="slde" hidden>
+          <section>
+            Select : <label for="slde1">ABOUT ME</label> | 
+            <label for="slde2">SKILL'S</label> | 
+            <label for="slde3">TECH STACK</label>
+          </section>
+          <article>
+            <div>
+              <p>I am Computer Science Undergrad Student at Amrita Vishwa Vidyapeetham, Kollam. I'm Very Interested In Learning New Things.</p>
+              <a href ="#recent"><button>MY PROJECTS</button></a>
+            </div>
+            <div>
+              <ul>
+                <li>Competitive Programming</li>
+                <li>Fullstack Devolopment</li>
+                <li>Android Devolopment</li>
+                <li>iOS Devolopment</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Programming Languages: C++,Python,JS,TS,go,Java</li>
+                <li>Frontend: ReactJS,NextJS,NuxtJS,Svelte,HTML(CSS)</li>
+                <li>Backend: Express,Django-Python,Hono,fastly</li>
+                <li>Database: MongoDB,sqlite,postgress,redis</li>
+                <li>GUI: Qt5,GTK,Tk,Electron</li>
+                <li>Android: Flutter,React-Native,AndroidStudio(Java/Kotlin)</li>
+              </ul>
+            </div>
+          </article>
+
+        </section>
+      </header>
+      <section id="recent">
+        <h1>Recent Projects</h1>
+        <section>
+          <div>
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400" alt="Project 1" width=100%>
+            <h3>Shopik - Mobile Shopping App</h3>
+            <p>A clean and intuitive mobile application interface designed for online shopping.</p>
+            <a href="https://github.com/coolmoves/mobapp" target="_blank">Github</a>
+          </div>
+
+          <div>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" alt="Project 2" width=100%>
+            <h3>Server Analytics Dashboard</h3>
+            <p>An interactive dashboard displaying real-time analytics with charts, graphs of any server.</p>
+            <a href="https://github.com/coolmoves/dashapp" target="_blank">Github</a>
+          </div>
+
+          <div>
+            <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?w=400" alt="Project 3" width=100%>
+            <h3>E-Dating Platform</h3>
+            <p>A full-featured dating and matching platform with AI listings, Algorithm based matching, and secure.</p>
+            <a href="https://github.com/coolmoves/dateapp" target="_blank">Github</a>
+          </div>
+        </section>
+        <a href="projects.html"><button>VIEW ALL PROJECTS</button></a>
+      </section>
+      <section id="contact">
+        <h1>CONTACT ME</h1>
+        <p>Email : <a href="mailto:goutham.kariyadan@mail.com">goutham.kariyadan@mail.com</a> <br>Phone : <a href="tel:+919999999999">+91 99999 99999</a></p>
+        <section>
+          <form action="mailto:goutham.kariyadan@mail.com" method="post" enctype="text/plain">
+            <label for="user">Enter Name :</label>
+            <input type="text" id="user" name="user" placeholder="Enter Name" required>
+            <label for="email">Enter Email :</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <label for="message">Enter Message :</label>
+            <textarea name="message" placeholder="Enter Message"></textarea>
+            <input type="submit" value="Send Message">
+          </form>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <span>-LINKS-</span>
+      <section>
+        <a href="about.html">About Me</a> | 
+        <a href="index.html#contact">Contact Me</a>
+      </section>
+      <br>
+      <span>-CONNECT-</span>
+      <div>
+        <a href="https://in.linkedin.com/in/goutham-kariyadan-131650386" target="_blank">LINKEDIN</a> | 
+        <a href="https://instagram.com/gouthamkariyadan" target="_blank">INSTAGRAM</a> |
+        <a href="https://facebook.com/gouthamkariyadan" target="_blank">FACEBOOK</a> |
+        <a href="https://twitter.com/gouthamkariyadan" target="_blank">TWITTER</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+

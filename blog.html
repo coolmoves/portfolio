@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>  
+      /*Main*/
+      main>*{
+        transform: translateY(10%);
+        opacity:0;
+        animation: reveal 0.8s ease forwards;
+      }
+      main{
+        flex:1;
+        padding-top:8rem;
+      }
+      main h1{
+        text-align:center;
+      }
+      main>p{
+        text-align:center;
+        color:#888888;
+      }
+      main section{
+        padding-left:10%;
+        padding-right:10%;
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+      }
+      main section div{
+        display:flex;
+        flex-direction:row;
+        gap:10px;
+        
+        background:#1e1e1e;
+        padding:10px;
+        box-sizing:border-box;
+        box-shadow:0px 0px 1px 1px #444;
+        border:1px solid #111;
+      }
+      main section img {
+        max-width: 100%;
+        height: auto;
+      }
+      main section div:hover{
+        border:1px dotted #ffb300;
+      }
+      main section article{
+        flex:1;
+      }
+      @media only screen and (max-width:746px){
+        nav{
+          flex-direction:column;
+          padding-left:5%;
+          padding-right:5%;
+        }
+        footer{
+          padding:6rem 5%;
+        }
+        main section{
+          padding-left:5%;
+          padding-right:5%;
+        }
+      }
+      @media only screen and (max-width:1000px){
+        main section div{
+          flex-direction:column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <span>GK</span>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a class="active" href="blog.html">BLOG</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+      <a href="resume.pdf" target="_blank"><button>RESUME</button></a>
+    </nav>
+    <main>
+      <h1>My Blog</h1>
+      <p>Logs of my achievements and activities.</p>
+      <section>
+        <div>
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400" alt="">
+          <article>
+            <h3>Getting Started with Web Development</h3>
+            <span>12/02/2026</span>
+            <p>Learned the basics of HTML, CSS, and JavaScript and started building my own websites.</p>
+          </article>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400" alt="">
+          <article>
+            <h3>Understanding Artificial Intelligence</h3>
+            <span>18/02/2026</span>
+            <p>Learned the basics of AI, Studied topics like LLMS and etc.</p>
+          </article>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=400" alt="">
+          <article>
+            <h3>Bought A New PC</h3>
+            <span>02/03/2026</span>
+            <p>Bought a new PC to imrove productivity and good atmosphere to build new innovative ideas.</p>
+          </article>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400" alt="">
+          <article>
+            <h3>Learning System Design</h3>
+            <span>10/03/2026</span>
+            <p>A look into deep system design concepts ,Motherboards and things.</p>
+          </article>
+        </div>
+
+      </section>
+    </main>
+    <footer>
+      <span>-LINKS-</span>
+      <section>
+        <a href="about.html">About Me</a> | 
+        <a href="index.html#contact">Contact Me</a>
+      </section>
+      <br>
+      <span>-CONNECT-</span>
+      <div>
+        <a href="https://in.linkedin.com/in/goutham-kariyadan-131650386" target="_blank">LINKEDIN</a> | 
+        <a href="https://instagram.com/gouthamkariyadan" target="_blank">INSTAGRAM</a> |
+        <a href="https://facebook.com/gouthamkariyadan" target="_blank">FACEBOOK</a> |
+        <a href="https://twitter.com/gouthamkariyadan" target="_blank">TWITTER</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
